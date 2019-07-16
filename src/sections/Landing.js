@@ -60,7 +60,7 @@ const LandingPage = () => (
       `}
       render={data => {
         const { name, socialLinks, roles } = data.contentfulAbout;
-
+         
         return (
           <Fragment>
             <Heading
