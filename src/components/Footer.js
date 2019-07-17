@@ -48,7 +48,7 @@ const Footer = () => (
           <FooterContainer>
             <Fade left>
               <TextFooter>
-                <span>{`${name} Portfolio - Powered by Puttipong Wongrak`}</span>
+                <span>{`Portfolio - Powered by Puttipong Wongrak`}</span>
                 <span role="img" aria-label="heart">
                   ❤️
                 </span>
