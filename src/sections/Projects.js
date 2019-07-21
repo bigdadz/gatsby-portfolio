@@ -103,11 +103,24 @@ const ProjectTag = styled.div`
   }
 `;
 
+const linkProject = (projectUrl) => {
+  if (projectUrl != '#') {
+    return(
+      <Box mx={1} fontSize={5}>
+        <SocialLink
+          name="See project"
+          fontAwesomeIcon="globe"
+          url={projectUrl}
+        />
+      </Box>
+    )
+  }
+}
+
 const Project = ({
   name,
   description,
   projectUrl,
-  repositoryUrl,
   type,
   publishedDate,
   logo,
@@ -132,21 +145,8 @@ const Project = ({
             style={{
               float: 'right',
             }}
-          >
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See project"
-                fontAwesomeIcon="globe"
-                url={projectUrl}
-              />
-            </Box>
+          > 
+            {linkProject(projectUrl)}
           </Flex>
           <ImageSubtitle
             bg="primaryLight"
@@ -170,7 +170,6 @@ Project.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   projectUrl: PropTypes.string.isRequired,
-  repositoryUrl: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   publishedDate: PropTypes.string.isRequired,
   logo: PropTypes.shape({
@@ -193,7 +192,6 @@ const Projects = () => (
               name
               description
               projectUrl
-              repositoryUrl
               publishedDate(formatString: "YYYY")
               type
               logo {
